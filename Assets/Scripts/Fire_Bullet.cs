@@ -14,6 +14,7 @@ public class Fire_Bullet : MonoBehaviour
         {
             //Instantiate a Game Object
             Instantiate(Bullet_Object,HotSpot_Position.position, Quaternion.identity);
+            Broadcaster.Instance.RaiseBulletFired();
         }
     }
 }

@@ -1,18 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-public class Broadcaster : MonoBehaviour
+public class Broadcaster : Singleton<Broadcaster>
 {
-    // Start is called before the first frame update
-    void Start()
+    public event Action Bullet_Fired;
+    public void RaiseBulletFired()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Bullet_Fired?.Invoke();
     }
 }
